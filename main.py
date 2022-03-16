@@ -1,9 +1,6 @@
 import speech_recognition as sr
-
 # - criar um "reconhecedor"
 rec = sr.Recognizer()
-
-# - ouvir o audio do microfone
 # para escolher qual microfone vamos usar, rode:
 # print(sr.Microphone().list_microphone_names())
 with sr.Microphone(device_index=3) as microfone:
@@ -18,4 +15,4 @@ try:
     texto = rec.recognize_google(audio, language="pt-BR")
     print(texto)
 except:
-    print("Não peguei áudio nenhum")
+    print('Não entendi o que você falou')
